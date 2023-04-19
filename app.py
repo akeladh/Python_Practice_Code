@@ -160,7 +160,7 @@ print(x) #22
 x = (2+3)*10-3
 #guess before running: 47
 print(x) #47
-"""
+
 
 
 #Math Functions
@@ -217,3 +217,25 @@ print(f'Down payment: ${payment}') #Down payment: $100000.0
 #and: just use word and
 #or: just use word or
 #not: just use word not (java is the !equivalent)
+"""
+
+#Comparison Operators
+# > < == !=
+temp = 30
+if temp > 30:
+    print("it's a hot day")
+else:
+    print("it's not a hot day")
+#PP: if name if less than 3 characters long -> must be longer than 3
+#if name is more than 50 characters long -> name max is 50
+#else: name works
+name = input("What is your name?: ")
+if len(name) < 3:
+    print("name must be at least 3 characters long")
+elif len(name) > 50:
+    print("name can be a max of 50 characters")
+else:
+    print("name looks good")
+
+
+#Weight Converter Project 
