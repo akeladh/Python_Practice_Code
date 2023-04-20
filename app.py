@@ -217,7 +217,7 @@ print(f'Down payment: ${payment}') #Down payment: $100000.0
 #and: just use word and
 #or: just use word or
 #not: just use word not (java is the !equivalent)
-"""
+
 
 #Comparison Operators
 # > < == !=
@@ -238,4 +238,30 @@ else:
     print("name looks good")
 
 
-#Weight Converter Project 
+#Weight Converter Project
+
+
+
+#While loops
+#format:
+#while condition:
+#while loops can have an else statement like if statements
+i=1
+while i <= 5:
+    print(i)
+    print('*' * i)
+    i += 1
+print("Done ", i)
+"""
+#While loop guessing game
+secret_num = 9
+guess_counter = 0
+guess_limit = 3
+while guess_counter < guess_limit:
+    guess = int(input('Guess: '))
+    guess_counter += 1
+    if guess == secret_num:
+        print("you won")
+        break
+else:
+    print("you lost")
