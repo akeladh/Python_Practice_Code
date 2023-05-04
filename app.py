@@ -267,15 +267,6 @@ else:
     print("you lost")
 """
 
-
-
-#For loops
-#for syntax:
-#for item in something:
-#[ ] --> list for strings, ints, whatever 
-for item in ['Mosh', 'John', 'Sarah']:
-    print(item)
-
 """
 # for loops:
 # syntax ---
@@ -442,7 +433,7 @@ print(x)
 print(y)
 print(z)
 #this isn't limited to tuples but works for lists too
-"""
+
 
 
 # Dictionaries
@@ -466,3 +457,82 @@ print(customer["name"])
 # add new key
 customer["birthdate"] = "Jan 1 1980"
 print(customer["birthdate"])
+#PP: User inputs phone number need to print out the string of it
+phone = input("Phone: ")
+numbers = {
+    "1": "One",
+    "2": "Two",
+    "3": "Three",
+    "4": "Four"
+}
+output = ""
+for ch in phone:
+    output += numbers.get(ch, "missing") + " " #gets the ch, goes through the dictionary,
+    # #if missing will add "missing" as the default but won't affect the dictionary itself
+print(output)
+print(numbers)
+#Emoji Converter using dictionaries
+message = input(">")
+words = message.split(" ") #how split method works is that it'll create a boundary for based on whatever we have it split based on
+#for this instance it'll split the string based on the spaces
+#lets say we have something like: good_morning___ where each _ = space then it'll return: ['good', 'morning', '', '', '']
+emojis = { #to get emojis on windows it's windows key + .
+    ":)": "😊",
+    ":(": "😒"
+}
+output = ''
+for word in words:
+    output += emojis.get(word, word) + " " #this means we're only translating the emojis,
+    # if it's an actual word then it's just be set as the default and ignored
+print(output)
+
+
+
+
+#Functions
+#definition: a container for a few lines of code that performs a specific tasks
+def greet_user():
+    print("Hi there!")
+    print("Welcome aboard")
+
+
+print("Start")
+greet_user()
+print("Finish")
+
+
+
+#Parameters
+#used in functions as place holders for receiving information
+def greet_user1(first_name, last_name):
+    print(f'Hi {first_name} {last_name}')
+    print("welcome to python")
+
+print("Start")
+greet_user1("Mary", "Smith")
+greet_user1("John", "Doe")
+print("Finish")
+#if there is a parameter you are obligated to pass a value -- if not --> error will pop up
+#parameter vs argument
+#parameter: holes and placeholders that is defined in function for receiving info
+#arugments: actual pieces of info that we supply to these functions (look at Mary at line 511)
+
+
+
+#Keyword Arguments
+#in the previous example, John and Smith are positional arguments which means that position matters
+#keyword arguments is where the position doesn't matter
+greet_user1(last_name="Ho", first_name="Susan")
+#don't always need to do keyword arugments but they can help improve the readability of our code
+#keyword arguements should always go after positional arugments something like this
+greet_user1("Chris", last_name="Mirandilla")
+"""
+
+
+#Return statement
+def square(number):
+    print(number*number)
+#returns a value but doesn't print until we call print
+
+print(square(3))
+#we get 9 and None
