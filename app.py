@@ -252,7 +252,7 @@ while i <= 5:
     print('*' * i)
     i += 1
 print("Done ", i)
-"""
+
 #While loop guessing game
 secret_num = 9
 guess_counter = 0
@@ -265,3 +265,204 @@ while guess_counter < guess_limit:
         break
 else:
     print("you lost")
+"""
+
+
+
+#For loops
+#for syntax:
+#for item in something:
+#[ ] --> list for strings, ints, whatever 
+for item in ['Mosh', 'John', 'Sarah']:
+    print(item)
+
+"""
+# for loops:
+# syntax ---
+# for item in Collection'
+# used to iterate over a collection
+for item in 'Python':
+    print(item)
+
+# [] -> list of anything really
+for item in ['Mosh', 'John', 'Sarah']:
+    print(item)
+
+# range function - built in function
+for item in range(10):
+    print(item)  # prints 0-9 excluding 10
+# range creates an object, not a list that can be interated over
+for item in range(5, 10):
+    print(item)  # prints 5-9
+# you can do steps in range
+for item in range(5, 10, 2):  # means print every odd #
+    print(item)  # print 5,7,9
+# pp: using for loop, calculate all the prices in the list
+prices = [10, 20, 30]
+total = 0
+for price in prices:
+    total += price
+print(f"Total: {total}")
+# got this question wrong but that's okie
+# where i went wrong: didn't initalize total variable first
+# can't convert list into int which is what i initiall did like this:
+#prices += prices
+
+
+
+# Nest loops
+# great for going over coordinates which is the example below
+for x in range(4):
+    for y in range(3):
+        print(f'({x}, {y})')
+
+# PP challenge:
+# using nested loops construct this shape:
+# XXXXX
+# XX
+# XXXXX
+# XX
+# XX
+#hint: numbers = [5,2,5,2,2]
+numbers = [5, 2, 5, 2, 2, ]
+# intial thoughts
+# have first loop to go through list
+# check to see if it's 5 or 2
+# have second loop to go print the x's
+# couldn't figure out how to right it so here is the solution
+for x_count in numbers:
+    output = ''
+    for count in range(x_count):
+        output += 'x'
+    print(output)
+
+
+# Lists
+# you can make list for pretty much every time
+names = ['john', 'mosh', 'akela', 'chris', 'sarah']
+print(names)  # 'john', 'mosh', 'akela', 'chris', 'sarah'] is printed
+print(names[3])  # chris
+print(names[-1])  # sarah
+# exactly the same as accessing indexes of a string
+print(names[2:])  # ['akela', 'chris', 'sarah']
+print(names[2:4])  # ['akela', 'chris']
+# all the examples with the : don't modify the list, it just prints a new one
+names[0] = 'Jon'
+print(names)
+# pp: write a program to find the largest num in a list
+numbers = [1, 9, 8, 10, 4, 5, 7, 3, 11]
+max = numbers[0]
+for next in numbers:
+    if next > max:
+        max = next
+print(max)
+# i over complicated this with a double for loop no need for that just yet
+
+
+# 2D lists
+#how to print this matrix
+#    1,2,3
+#    4,5,6
+#    7,8,9
+#
+# with a list w/in another list or 2d list:
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+# how to access
+print(matrix[0][0])  # 1
+print(matrix[0][2])  # 3
+matrix[0][1] = 20
+print(matrix)  # [[1, 20, 3], [4, 5, 6], [7, 8, 9]]
+for row in matrix:
+    for item in row:
+        print(item)
+
+
+
+# List methods
+numbers = [5, 2, 1, 7, 4]
+numbers.append(20)  # adds 20 to the end of the list
+print(numbers)
+# insert takes the index of where you want to insert an instance,
+# and then you put what it is you want to add to the list
+numbers.insert(0, 10)
+print(numbers)  # [10, 5, 2, 1, 7, 4, 20]
+numbers.remove(5)  # removes item from list not by index
+print(numbers)  # [10, 2, 1, 7, 4, 20]
+# numbers.clear()  # empties list
+# print(numbers) #[]
+numbers.pop()  # removes the last item in list
+print(numbers)  # [10, 2, 1, 7, 4]
+# prints the index of the first occurrance of the item -- 3
+print(numbers.index(7))
+# print(numbers.index(50)) #error
+# False -- another way of checking the existance of an item in a list
+print(50 in numbers)
+print(numbers.count(2))  # 1 -- counts how many instances of item
+# None -- object in object that represent the absence of a value
+print(numbers.sort())
+# if we want to sort we have to do it in 2 steps:
+# numbers.sort()
+# print(numbers) #[1, 2, 4, 7, 10] in ascending order
+numbers.reverse()  # sorts in descending order
+print(numbers)  # [10, 7, 4, 2, 1]
+# will copy all the items on the list but if there are adjustments to original list, it won't impact the second list
+numbers2 = numbers.copy()
+numbers.append(10)
+print(numbers2)  # [10, 7, 4, 2, 1]
+print(numbers)  # [10, 7, 4, 2, 1, 10]
+# PP: write a program to remove the duplicates in a list
+numList = [2, 2, 4, 6, 3, 4, 6, 1]
+unique = []
+for num in numList:
+    if num not in unique:
+        unique.append(num)
+print(unique)
+
+
+# Tuples
+# similar to lists but can't modify them
+# immutable so can't add, reduce them
+numbers = (1, 2, 3)  # has () instead of []
+print(numbers[0])
+
+
+# Unpacking
+coordinates = (1, 2, 3)
+# instead of doing this:
+#x = coordinates[0]
+#y = coordinates[1]
+#z = coordinates[2]
+# we can do unpacking like this
+x, y, z = coordinates
+print(x)
+print(y)
+print(z)
+#this isn't limited to tuples but works for lists too
+"""
+
+
+# Dictionaries
+# used to store info that comes as key value pairs
+# key is on the left, value is on the right
+# there should only be 1 key so can't have 2 ages
+customer = {
+    "name": "John Smith",
+    "age": 30,
+    "is_verified": True
+}
+print(customer["name"])
+# the "name" portion has to be exact so can't write "Name" --> error
+# to get around this --> use get method
+print(customer.get("birthdate"))  # None
+# you can supply a default value
+print(customer.get("birthdate", "Jan 1 1980"))
+# updating name
+customer["name"] = "Jack Smith"
+print(customer["name"])
+# add new key
+customer["birthdate"] = "Jan 1 1980"
+print(customer["birthdate"])
