@@ -675,3 +675,16 @@ cat1.be_annoying()
 
 #Modules:
 #file with some python code
+#used to roganize ocde into files
+#like sections in a supermarket
+#not all code is going to be in the app.py folder
+#you can import modules into any file that needs functions from another module
+#modules should contain all related functions and classes
+#2 ways to import modules
+#whole file
+import converters
+print(converters.kg_to_lbs(60))
+
+#import specific functions from that module
+from converters import kg_to_lbs
+print(kg_to_lbs(45)) #we don't have to prefix the function w/ the name of the object
