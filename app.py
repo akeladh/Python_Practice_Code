@@ -526,7 +526,7 @@ greet_user1(last_name="Ho", first_name="Susan")
 #don't always need to do keyword arugments but they can help improve the readability of our code
 #keyword arguements should always go after positional arugments something like this
 greet_user1("Chris", last_name="Mirandilla")
-"""
+
 
 
 #Return statement
@@ -536,3 +536,142 @@ def square(number):
 
 print(square(3))
 #we get 9 and None
+#why none: by default all functions return the value None
+#none is an object that represents the absence of a value
+#after the square function is executed, the value none is returned and passed as an arugment to the print function
+#hence why we see it print function on the second line
+
+
+
+#Creating a reuseable function using the emoji converter that we made earlier
+def emoji_converter(message):
+    words = message.split(" ")
+    emojis = { #to get emojis on windows it's windows key + .
+        ":)": "😊",
+        ":(": "😒"
+    }
+    output = ''
+    for word in words:
+        output += emojis.get(word, word) + " "
+    return output
+
+
+message = input(">>>")
+print(emoji_converter(message))
+
+
+
+
+#Exceptions
+#exit code 0 means that code ran smoothly without errors
+#we need to anticipate errors without making the whole program crash
+#we use - try except - blocks to handle errors
+try:
+    age = int(input("Age: "))
+    income = 2000
+    risk = income/age
+    print(age)
+except ZeroDivisionError:
+    print("age can't be 0")
+except ValueError: #if you encounter error type ValueError
+    print("invalid value")
+
+
+
+#Comments: lol i've been using this so much so i'm good but let's see if there's any more info
+#tip for writing: write the why's and how's not the what
+
+
+
+#Classes:
+#Basic Types: Numbers, Strings, Booleans
+#More complex ones: Lists, Dictionaries
+class Point:
+    def move(self):
+        print('move')
+
+    def draw(self):
+        print('draw') #
+
+#an object is an instance of a class
+#class defines or is blueprint/template for creating objects
+#to create an object we do something like this:
+
+point1 = Point()
+point1.draw()
+#objects can also have attributes -- attributes are like variables that belong to a particular object
+point1.x = 10
+point1.y = 20
+print(point1.x)
+point1.draw()
+
+point2 = Point()
+point2.x = 1
+print(point2.x)
+#recap: classes are used to define new types, these types can have methods in the body of the class
+#attributes can be set anywhere in the program
+
+
+
+
+#Constructors:
+#a function that gets called at the time of creating an object in order to create an object
+#self is a reference to the current object
+class Point:
+    def __init__(self,x,y):  #init is short for initialize
+        self.x = x
+        self.y = y
+    def move(self):
+        print('move')
+
+    def draw(self):
+        print('draw')
+
+point = Point(10,20) #when this is read the10 will be the x, and the 20 will be the y
+point.x = 11
+print(point.x)
+#PP: Create new type called person which should have name attribute as well as talk method
+class Person:
+    def __init__(self, name):
+        self.name = name #setting the name attribtue of the current object to the fname argument passed to this method
+    def talk(self):
+        print(f'Hi there my name is, {self.name}')
+
+
+person1 = Person('Mary')
+print(person1.name)
+person1.talk()
+person2 = Person("Bob")
+person2.talk()
+
+
+
+#Inheritance:
+#mechanism for reusing code with parentClass having most of the main key functions and
+#the children classes have unique functions for their needs
+class Mammal:
+    def walk(self):
+        print("walk")
+
+
+class Dog(Mammal): #now dog will inherit all the functions of the mammal class
+    pass #python doesn't like an empty class so we use "pass" to not worry about it
+    def bark(self):
+        print("bark")
+class Cat:
+    pass
+    def be_annoying(self):
+        print("annoying")
+
+dog1 = Dog()
+dog1.walk()
+dog1.bark()
+
+cat1 = Cat()
+cat1.be_annoying()
+"""
+
+
+
+#Modules:
+#file with some python code
