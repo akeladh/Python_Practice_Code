@@ -669,7 +669,7 @@ dog1.bark()
 
 cat1 = Cat()
 cat1.be_annoying()
-"""
+
 
 
 
@@ -688,3 +688,18 @@ print(converters.kg_to_lbs(60))
 #import specific functions from that module
 from converters import kg_to_lbs
 print(kg_to_lbs(45)) #we don't have to prefix the function w/ the name of the object
+
+#PP make a function called find_max should take a list and will return largest number in that list
+#put the function into a module calling it utils, importing it and then using it
+from utils import find_max
+numbers = [1, 9, 8, 10, 4, 5, 7, 3, 11]
+max = find_max(numbers)
+#max is actually a built in function in python so we can just do this
+#print(max(numbers))
+print(max)
+"""
+
+
+#Package:another way to organize code, to store multiple modules
+#in order to make a folder into a package we need to add a special file to it called __init__.py
+#or in pycharm you can just do a python folder instead of a regular folder then adding the spec. file
