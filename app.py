@@ -697,9 +697,83 @@ max = find_max(numbers)
 #max is actually a built in function in python so we can just do this
 #print(max(numbers))
 print(max)
-"""
+
 
 
 #Package:another way to organize code, to store multiple modules
 #in order to make a folder into a package we need to add a special file to it called __init__.py
 #or in pycharm you can just do a python folder instead of a regular folder then adding the spec. file
+#now we made a another folder which has a calc shipping module in it and want to import it to here
+#import the entire file simply
+import ecommerce.shipping
+ecommerce.shipping.calc_shipping()
+#how to import a specific function in module
+from ecommerce.shipping import calc_shipping
+calc_shipping()
+#how to import entire module
+from ecommerce import shipping
+shipping.calc_shipping()
+
+
+
+#Generating Random Values
+#Random values is a built in modules in python
+#we can see more nuilt in modules at this link : https://docs.python.org/3/py-modindex.html
+#random number module is built in
+import random
+for i in range(3):
+    print(random.random()) #random generates a random number between 0-1
+    print(random.randint(10,20)) #generates ints between 10,20
+members = ['John', 'Mary', 'Bob', 'Mosh']
+print(random.choice(members))
+"""
+#PP Roll a dice program, every time we run it, it'll be different values
+#(3,1), etc
+#Class Dice with a roll() to return a tuple which is fixed and can't be adjusted
+#method vs function: method belongs to a class/object -- funct are independent
+import random
+
+
+class Dice:
+    def roll(self):
+        firstNum = random.randint(1,6)
+        secNum = random.randint(1,6)
+        return firstNum, secNum
+
+
+dice = Dice()
+print(dice.roll())
+
+
+
+#Working with Directories
+from pathlib import Path #common directory built into py
+#absolute path
+#c:\Program Files\Microsoft
+#relative path
+path = Path("ecommerce")
+print(path.exists())
+path = Path("ecommerce1")
+print(path.exists())
+#make a new directory
+path = Path("emails")
+#print(path.mkdir())
+#remove a directory
+path = Path("emails")
+#print(path.rmdir()) #make a new directory
+#how to find files
+path = Path()
+for file in path.glob('*.py'):
+    print(file)
+
+
+
+#Pypi & Pip
+#there are a lot of built-in directories in python but not complete there we use other ones:
+#Pypi: we can find thousands of packages that others have built and published for us to use
+#lets try using one of these pypi packages called openpyxl
+#need to install this via terminal
+
+
+
+
